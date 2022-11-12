@@ -13,10 +13,7 @@ module.exports = async ({ getNamedAccounts, deployments }) => {
       args: [BASE_FEE, GAS_PRICE_LINK],
     });
     log("Mocks Deployed!");
-    log(
-      "You are deploying to a local network, you'll need a local network running to interact"
-    );
-    log("!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!");
+    log("----------------------------------------------------");
   }
 };
 module.exports.tags = ["all", "mocks", "main"];
