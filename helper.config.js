@@ -26,8 +26,18 @@ const NFT_URIS = [
   "ipfs://QmYx6GsYAKnNzZ9A6NvEKV9nf1VaDzJrqDR23Y8YSkebLU",
   "ipfs://QmUPjADFGEKmfohdTaNcWhp7VGk26h5jXDA7v3VtTnTLcW",
 ];
+const frontEndContractsFile =
+  "./nextjs-marketplace/constants/networkMapping.json";
+const frontEndContractsFile2 =
+  "./graph-nft-marketplace/constants/networkMapping.json";
+const frontEndAbiLocation = "./nextjs-marketplace/constants/";
+const frontEndAbiLocation2 = "./graph-nft-marketplace/constants/";
 module.exports = {
   devNetWorks,
   networkConfig,
   NFT_URIS,
+  frontEndContractsFile,
+  frontEndContractsFile2,
+  frontEndAbiLocation,
+  frontEndAbiLocation2,
 };

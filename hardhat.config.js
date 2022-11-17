@@ -3,6 +3,7 @@ require("hardhat-deploy");
 require("@nomiclabs/hardhat-etherscan");
 require("@nomiclabs/hardhat-ethers");
 require("@nomiclabs/hardhat-waffle");
+require("hardhat-gas-reporter");
 require("dotenv").config();
 GOERLI_RPC_URL = process.env.GOERLI_RPC_URL || "";
 PRIVATE_KEY = process.env.PRIVATE_KEY || "";
@@ -21,6 +22,8 @@ module.exports = {
       url: GOERLI_RPC_URL,
       accounts: [PRIVATE_KEY],
       chainId: 5,
+      timeout: 3000000,
+      blockConfirmations: 6,
     },
   },
   // verify 国内环境不行，开了vpn全局代理也不行
@@ -28,6 +31,12 @@ module.exports = {
     apiKey: ETHERSCAN_API_KEY,
     timeout: 500000,
   },
+  gasReporter: {
+    enable: true,
+    currency: "USD",
+    outputFile: "gas-report.txt",
+    noColors: true,
+},
   // mocha: {
   //   timeout: 200000, // 200 seconds max for running tests
   // },
