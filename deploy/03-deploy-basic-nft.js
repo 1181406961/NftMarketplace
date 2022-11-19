@@ -12,6 +12,14 @@ module.exports = async ({ getNamedAccounts, deployments }) => {
   });
   log("BasicNft Deployed!");
   log("----------------------------------------------------");
+  await deploy("BasicNftTwo", {
+    from: deployer,
+    args: [],
+    log: true,
+    waitConfirmations: 1,
+})
+  log("BasicNftTwo Deployed!");
+  log("----------------------------------------------------");
 };
 
 module.exports.tags = ["all", "basicnft", "main"];

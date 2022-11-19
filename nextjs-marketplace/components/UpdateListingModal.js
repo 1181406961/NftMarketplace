@@ -23,8 +23,8 @@ export default function UpdateListingModal({
       newPrice: ethers.utils.parseEther(priceToUpdateListingWith || "0"),
     },
   });
-  console.log("!!!!!!!!!!!!!!!", priceToUpdateListingWith);
-  const handleUpdateListingSuccess = () => {
+  const handleUpdateListingSuccess = async (trx) => {
+    await trx.wait();
     dispatch({
       type: "success",
       message: "listing updated",
@@ -32,7 +32,7 @@ export default function UpdateListingModal({
       position: "topR",
     });
     onClose && onClose();
-    setPriceToUpdateListingWith("0")
+    setPriceToUpdateListingWith("0");
   };
   return (
     <Modal
@@ -43,7 +43,7 @@ export default function UpdateListingModal({
           onError: (error) => {
             console.log(error);
           },
-          onSuccess: () => handleUpdateListingSuccess(),
+          onSuccess: (trx) => handleUpdateListingSuccess(trx),
         });
       }}
     >

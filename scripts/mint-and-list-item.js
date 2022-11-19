@@ -5,7 +5,7 @@ const PRICE = ethers.utils.parseEther("0.01")
 
 async function mintAndList() {
     const nftMarketplace = await ethers.getContract("NftMarketplace")
-    let basicNft = await ethers.getContract("BasicNft")
+    let basicNft = await ethers.getContract("BasicNftTwo")
     console.log("Minting NFT...")
     const mintTx = await basicNft.mintNft()
     const mintTxReceipt = await mintTx.wait(1)
